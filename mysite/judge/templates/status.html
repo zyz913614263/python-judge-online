@@ -1,0 +1,105 @@
+<table align="center" width=96%  >
+	<th><a href ="./problem.html" >PROBLEMS</a></th>
+	<th><a href ="./status.html">STATUS</a></th>
+	<th>CONTEST</th>
+</table>
+<table width=96%>
+<tr>
+<td colspan=9>
+<style>
+	td{font-size:14}
+</style>
+	<form>
+Problem ID:	<input type=text size=10 name=problem_id value=''>
+User ID:	<input type=text size=10 name=user_id value=''>
+Language:	<select size="1" name="language">
+			<option value='-1' selected>All</option>
+			<option value=0>C</option>
+			<option value=1>C++</option>
+			<option value=2>Java</option>			
+		</select>
+Result:		<select size="1" name="jresult">
+			<option value='-1' selected>All</option>
+			<option value='0'>Pending</option>
+			<option value='1'>Running & Judging</option>
+			<option value='2'>Compile Error</option>			
+			<option value='3'>Accepted</option>
+			<option value='4'>Wrong Answer</option>
+			<option value='5'>Runtime Error</option>		
+			<option value='6'>Time Limit Exceed</option>
+			<option value='7'>Memory Limit Exceed</option>
+			<option value='8'>Presentation Error</option>			
+			
+		</select>
+	<input type=submit value='Go'>
+	</form>
+</tr>
+<tr align=center class='toprow'>
+	<td width="8%">Run ID</td>
+	<td width="10%">User</td>
+	<td width="6%">Problem</td>
+	<td width="17%">Result</td>
+	<td width="10%">Memory</td>
+	<td width="8%">Time</td>
+	<td width="6%">Language</td>
+	<td width="10%">Code Length</td>
+	<td width="17%">Submit Time</td>
+</tr>
+{%for stu in stus %}
+<tr align=center class='toprow'>
+	<td>{{stu.solution_id}}</td>
+	<td>{{stu.user_id_id}}</td>	
+	<td>{{stu.problem_id_id}}</td>
+	{%ifequal stu.result 0%}
+		<td>Pending</td>
+	{%endifequal%}
+	{%ifequal stu.result 1%}
+		<td><B>Running</B></td>
+	{%endifequal%}
+	{%ifequal stu.result 2%}
+		<td ><font color="blue"><a href="/judge/showcompileinfo&{{stu.solution_id}}" >Compile Error</font></td></td>
+	{%endifequal%}
+	{%ifequal stu.result 3%}
+		<td><font color="red">Accepted</font></td>
+	{%endifequal%}
+	{%ifequal stu.result 4%}
+		<td><font color="green">Wrong Answer</font></td>
+	{%endifequal%}
+	{%ifequal stu.result 5%}
+		<td><B>Runtime Error</B></td>
+	{%endifequal%}
+	{%ifequal stu.result 6%}
+		<td><B>Time Limit Exceed</B></td>
+	{%endifequal%}
+	{%ifequal stu.result 7%}
+		<td><B>Memory Limit Exceed</B></td>
+	{%endifequal%}
+	{%ifequal stu.result 8%}
+		<td><B>Presentation Error</B></td>
+	{%endifequal%}
+	{%ifequal stu.result 9%}
+		<td><B>Output Limit Exceed</B></td>
+	{%endifequal%}
+	<td>{{stu.memory}}</td>
+	<td>{{stu.time}}</td>
+	<td><a href="/judge/showsource&{{stu.solution_id}}" >
+		{%ifequal stu.language 0%}		
+			C
+		{%endifequal%}
+		{%ifequal stu.language 1%}		
+			C++
+		{%endifequal%}
+		{%ifequal stu.language 2%}		
+			java
+		{%endifequal%}
+	</a></td>
+	<td>{{stu.code_length}}</td>
+	<td>{{stu.in_date}}</td>
+</tr>
+{%endfor%}
+<a href="javascript:history.go(-1)"><font color=red>Back</font></a>
+<center>
+	<p>
+		All Copyright Reserved 2003-2011 
+	</p>
+</center>
