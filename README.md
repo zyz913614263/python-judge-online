@@ -2,7 +2,7 @@ python-judge-online
 ===================
 
 python ACM judge online python(ACM在线判题系统) 
-
+现在仅支持C/C++/java的题目
 
 mysite为显示题目和比赛的django程序
 core 为本地判题的程序
