@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+<table align="center" width=96%  >
+	<th><a href ="./problem.html" >PROBLEMS</a></th>
+	<th><a href ="./status.html">STATUS</a></th>
+	<th>CONTEST</th>
+</table>
+</br></br>
+<table width=96% align="center">
+<tr align="center">
+	<td>Problem ID</td>
+	<td>Title</td>
+	<td>Ratio(AC/Submit)</td>
+</tr>
+{%for problem in problems%}
+<tr align="center">
+	<td>{{problem.problem_id}}</td>
+	<td><a href="problem&{{problem.problem_id}}">{{problem.title}}</a></td>
+	<td>{{problem.accepted}}/{{problem.submit}}</td>
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>
