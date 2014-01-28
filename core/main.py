@@ -233,6 +233,7 @@ def judge(lang,isspj,time_lmt,mem_lmt,p_id):
     isspj = 0
     topmemory = 0
     usedtime = 0
+    os.system("g++ -o judge judge.cpp")
     os.system("./judge %s %s %s"%(lang,time_lmt,mem_lmt))
     fp = open("res.txt","r")
     ACflg = int(fp.readline())
