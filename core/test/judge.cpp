@@ -40,7 +40,6 @@
 //#include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
-#include <mysql/mysql.h>
 #include <assert.h>
 
 #define STD_MB 1048576
